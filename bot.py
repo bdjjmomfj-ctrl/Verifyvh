@@ -2,14 +2,14 @@ import discord
 from discord.ext import commands
 
 # ============ إعدادات IDs ============
-TOKEN = "ضع_التوكن_هنا"  # أو خزّنه في Secrets
-GUILD_ID                = 1409565990387450038   # ID السيرفر
-CHANNEL_VERIFY_ID       = 1410306211869491240   # روم "تفعيل"
-CHANNEL_APPLICATIONS_ID = 1410306611179815013   # روم "استمارات-التفعيل"
-ROLE_UNVERIFIED_ID      = 1410306854432800879   # رول "غير مفعل"
-ROLE_VERIFIED_ID        = 1410307090659938324   # رول "مفعل"
-ROLE_VERIFY_TEAM_ID     = 1410307338870460529   # رول "GALAXY VERIFICATION TEAM"
-ROLE_BLACKLIST_ID       = 1410307196570308608   # رول "BLACK LIST"
+TOKEN = "ضع_التوكن_هنا"  # ⚠️ حط توكن البوت هنا
+GUILD_ID                = 123456789012345678   # ID السيرفر
+CHANNEL_VERIFY_ID       = 111111111111111111   # روم "تفعيل"
+CHANNEL_APPLICATIONS_ID = 222222222222222222   # روم "استمارات-التفعيل"
+ROLE_UNVERIFIED_ID      = 333333333333333333   # رول "غير مفعل"
+ROLE_VERIFIED_ID        = 444444444444444444   # رول "مفعل"
+ROLE_VERIFY_TEAM_ID     = 555555555555555555   # رول "GALAXY VERIFICATION TEAM"
+ROLE_BLACKLIST_ID       = 666666666666666666   # رول "BLACK LIST"
 
 # بنر
 BANNER_URL = "https://cdn.discordapp.com/attachments/1408466066144890973/1410296250187907142/logo.png"
@@ -60,7 +60,7 @@ class ApplicationActionView(discord.ui.View):
         if member:
             unverified = guild.get_role(ROLE_UNVERIFIED_ID)
             verified = guild.get_role(ROLE_VERIFIED_ID)
-            if unverified in member.roles:
+            if unverified and unverified in member.roles:
                 await member.remove_roles(unverified)
             if verified:
                 await member.add_roles(verified)
